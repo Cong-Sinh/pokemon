@@ -62,11 +62,13 @@ const App: React.FC = () => {
           viewDetail={viewDetail}
           setDetail={setDetail}
         />
-        <div className="btn">
-          <button onClick={nextPage}>
-            {loading ? "Loading... " : "load more"}{" "}
-          </button>
-        </div>
+        {!viewDetail.isOpened && (
+          <div className="btn">
+            <button onClick={nextPage}>
+              {loading ? "Loading... " : "load more"}{" "}
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
